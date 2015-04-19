@@ -14,9 +14,18 @@ function init(){
 }
 function moveRight(){
 	
+	var x = 10.0;
+	var y = 5.0;
+	imgObj.style.left = parseInt(imgObj.style.left) + x + 'px';
+	imgObj.style.top = parseInt(imgObj.style.top) + y  + 'px';
+    var rads = Math.atan2(x, y);
+    var deg = rads * (180/Math.PI)
 
-	imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
-	imgObj.style.top = parseInt(imgObj.style.top) + 5  + 'px';
+    imgObj.style.webkitTransform = 'rotate('+deg+'deg)'; 
+    imgObj.style.mozTransform    = 'rotate('+deg+'deg)'; 
+    imgObj.style.msTransform     = 'rotate('+deg+'deg)'; 
+    imgObj.style.oTransform      = 'rotate('+deg+'deg)'; 
+    imgObj.style.transform       = 'rotate('+deg+'deg)'; 
 
    //imgObj.style.left = parseInt(imgObj.style.left) + 5 + 'px';
    animate = setTimeout(moveRight,100); // call moveRight in 20msec
